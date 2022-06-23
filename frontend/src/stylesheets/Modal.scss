@@ -1,0 +1,103 @@
+@import './App.scss';
+
+.modal-dialog {
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  min-width: 500px;
+  transform: translate(-50%) !important;
+  color: $primary-color;
+
+  .modal-content {
+    padding: 5px 0;
+    border-radius: 10px;
+    border: none;
+
+    .modal-header {
+      position: relative;
+      padding: 0;
+      border-color: #ddd;
+      display: flex;
+      align-items: center;
+
+      .modal-title {
+        font-size: 22px;
+        text-transform: capitalize;
+        margin: 15px 20px;
+      }
+
+      .close {
+        opacity: 1;
+        position: absolute;
+        right: 20px;
+        font-size: 25px;
+        color: inherit;
+      }
+    }
+
+    .modal-body {
+      font-size: 18px;
+      font-weight: 300;
+      color: $supporting-color;
+      padding-left: 25px;
+      padding-right: 25px;
+      margin: 20px 0;
+    }
+
+    .modal-footer {
+      border-color: #ddd;
+
+      button {
+        transition: all 0.4s ease-out;
+        background: transparent;
+        border: 1px solid #ddd;
+        width: 20%;
+        min-width: 100px;
+        border-radius: 30px;
+        font-weight: 300;
+        font-size: 15px;
+        appearance: none;
+        outline: none;
+        line-height: 1.6;
+
+        &:hover,
+        &:focus {
+          border: 1px solid $supporting-color;
+          outline: none;
+          box-shadow: none;
+        }
+
+        &#delete-question {
+          text-transform: uppercase;
+          color: #f00;
+
+          &:hover,
+          &:focus {
+            transition: all 0.3s ease-in;
+            background: #f00;
+            color: #fff;
+            font-weight: 400;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-dialog {
+    left: 10%;
+    width: 80vw;
+    min-width: unset;
+    transform: translate(0%) !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal-dialog {
+    width: 90vw;
+    left: 5%;
+  }
+}
